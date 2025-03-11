@@ -1,7 +1,7 @@
 import { Pageable } from '@/types/pageable';
 import { CurrencyDto } from './account';
 
-export interface LoansResponseDto {
+export interface LoanDto {
   loanNumber: number;
   type: string;
   amount: number;
@@ -15,4 +15,5 @@ export interface LoansResponseDto {
   remainingDebt: number;
   currency: CurrencyDto;
 }
-export type LoanOverviewResponseDto = Pageable<LoansResponseDto>;
+
+export type LoansResponseDto = Pageable<LoanDto>;

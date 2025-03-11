@@ -62,7 +62,7 @@ const LoansOverviewPage: React.FC = () => {
       type: 'SET_BREADCRUMB',
       items: [
         { title: 'Home', url: '/e' },
-        { title: 'Loans', url: '/e/employee/loans/overview' },
+        { title: 'Loans', url: '/e/loans/overview' },
         { title: 'Overview' },
       ],
     });

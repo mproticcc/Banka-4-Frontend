@@ -134,14 +134,14 @@ const EmployeeGroups: SidebarGroupType[] = [
   },
   {
     title: 'Loans',
-    url: '/e/employee',
+    url: '/e',
     icon: CircleDollarSign,
     isActive: false,
     userType: 'employee',
     items: [
       {
         title: 'Overview',
-        url: '/e/employee/loans/overview',
+        url: '/e/loans/overview',
         icon: List,
         privileges: [],
       },

@@ -1,7 +1,7 @@
 import { Axios } from 'axios';
 import { LoanOverviewResponseDto } from './response/loans';
 
-export const searchLoans = async (
+export const searchAllLoans = async (
   client: Axios,
   filters: {
     type: string;

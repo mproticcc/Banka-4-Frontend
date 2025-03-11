@@ -14,7 +14,7 @@ import { useQuery } from '@tanstack/react-query';
 import { DataTable } from '@/components/dataTable/DataTable';
 import useTablePageParams from '@/hooks/useTablePageParams';
 import FilterBar from '@/components/filters/FilterBar';
-import { searchLoans } from '@/api/loans';
+import { searchAllLoans } from '@/api/loans';
 import { loansColumns } from '@/ui/dataTables/loans/loansOverviewColums';
 
 interface LoanFilter {
@@ -52,7 +52,7 @@ const LoansOverviewPage: React.FC = () => {
   const { data, isLoading } = useQuery({
     queryKey: ['loans', page, pageSize, searchFilter],
     queryFn: async () =>
-      (await searchLoans(client, searchFilter, pageSize, page)).data,
+      (await searchAllLoans(client, searchFilter, pageSize, page)).data,
   });
 
   const { dispatch } = useBreadcrumb();

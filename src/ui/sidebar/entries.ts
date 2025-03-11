@@ -143,7 +143,7 @@ const EmployeeGroups: SidebarGroupType[] = [
         title: 'Overview',
         url: '/e/employee/loans/overview',
         icon: List,
-        privileges: ['ADMIN'],
+        privileges: [],
       },
     ],
   },

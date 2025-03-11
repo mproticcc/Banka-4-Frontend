@@ -74,7 +74,9 @@ const LoansOverviewPage: React.FC = () => {
           <CardHeader>
             <h1 className="text-2xl font-bold">Loans Overview</h1>
             <CardDescription>
-              This table provides a clear and organized overview loan
+              This table provides a clear and well-structured overview of loans,
+              making it easy to review key details and track relevant
+              information.
             </CardDescription>
             <FilterBar<LoanFilter>
               filterKeyToName={loanFilterKeyToName}

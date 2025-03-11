@@ -40,6 +40,7 @@ const LoansOverviewPage: React.FC = () => {
     page: 0,
   });
 
+  //TODO implement enum filters
   const [searchFilter, setSearchFilter] = useState<LoanFilter>({
     type: '',
     loanNumber: '',

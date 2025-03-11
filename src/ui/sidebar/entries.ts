@@ -156,7 +156,7 @@ const EmployeeGroups: SidebarGroupType[] = [
     items: [
       {
         title: 'Overview',
-        url: '/e/loans/overview',
+        url: '/e/loans',
         icon: List,
         privileges: [],
       },

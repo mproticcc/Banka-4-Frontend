@@ -31,7 +31,7 @@ import { SomePartial } from '@/types/utils';
 import { MultiSelect } from '@/components/ui/multi-select';
 import { ALL_PRIVILEGES } from '@/types/privileges';
 import { getDirtyValues } from '@/lib/form-utils';
-import { genderValues } from '@/types/gender';
+import { ALL_GENDERS_ } from '@/types/gender';
 
 const formSchema = z.object({
   firstName: z.string().min(1),
@@ -45,7 +45,7 @@ const formSchema = z.object({
   position: z.string().min(1),
   username: z.string().min(1),
   department: z.string().min(1),
-  gender: z.enum(genderValues),
+  gender: z.enum(ALL_GENDERS_),
   active: z.boolean(),
 
   // All selectable privileges

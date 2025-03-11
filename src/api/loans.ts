@@ -33,4 +33,3 @@ export const searchAllLoans = async (
     params: { ...filters, size: rowsPerPage, page: currentPage },
   });
 };
-

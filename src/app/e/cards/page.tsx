@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -27,10 +27,12 @@ import { CardResponseDto } from '@/api/response/cards';
 import { toastRequestError } from '@/api/errors';
 import { toast } from 'sonner';
 import { ALL_CARD_STATUSES } from '@/types/card';
+import { useSearchParams } from 'next/navigation';
 
 type CardAction = 'BLOCK' | 'UNBLOCK' | 'DEACTIVATE';
 
 const EmployeeManageCardsPage: React.FC = () => {
+  const params = useSearchParams();
   const { page, pageSize, setPage, setPageSize } = useTablePageParams('cards', {
     pageSize: 8,
     page: 0,
@@ -42,6 +44,7 @@ const EmployeeManageCardsPage: React.FC = () => {
     lastName: undefined,
     email: undefined,
     cardStatus: undefined,
+    accountNumber: params.get('an') ?? '',
   });
 
   const cardFilterColumns: Record<keyof CardFilter, FilterDefinition> = {
@@ -255,4 +258,10 @@ function resolveDialogDescription(cardAction: CardAction) {
   }
 }
 
-export default EmployeeManageCardsPage;
+const EmployeeManageCardsPageSuspense = () => (
+  <Suspense fallback={<div>Loading...</div>}>
+    <EmployeeManageCardsPage />
+  </Suspense>
+);
+
+export default EmployeeManageCardsPageSuspense;
